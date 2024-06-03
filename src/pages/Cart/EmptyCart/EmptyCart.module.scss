@@ -1,0 +1,41 @@
+.root {
+  text-align: center;
+  padding: 100px;
+
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    img {
+      margin-right: 5px;
+      width: 48px;
+    }
+  }
+
+  .cartImg {
+    margin-bottom: 15px;
+  }
+
+  .cartBtn {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    color: white;
+    width: 210px;
+    height: 46px;
+    border-radius: 30px;
+    background: rgb(40, 40, 40);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgb(58, 58, 58);
+    }
+
+    &:active {
+      background: rgb(48, 48, 48);
+      transform: scale(0.95);
+    }
+  }
+}

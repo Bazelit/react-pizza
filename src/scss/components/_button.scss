@@ -1,5 +1,9 @@
 @import "../variables";
 
+button {
+  user-select: none;
+}
+
 .button {
   display: inline-block;
   background-color: $orange;
@@ -88,6 +92,7 @@
   }
 
   &__delimiter {
+    display: inline-block;
     width: 1px;
     height: 25px;
     background-color: rgba(255, 255, 255, 0.25);
@@ -134,6 +139,15 @@
     align-items: center;
     line-height: 23px;
     padding: 12px 25px;
+
+    .button-cart__price {
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 420px) {
+        display: none;
+      }
+    }
 
     svg {
       margin-right: 8px;
