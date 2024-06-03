@@ -1,4 +1,4 @@
-![Stars](<img src="https://m3-markdown-badges.vercel.app/stars/4/3/Bazelit/react-pizza">)
+![Stars](https://m3-markdown-badges.vercel.app/stars/4/3/Bazelit/react-pizza)
 ![React](https://ziadoua.github.io/m3-Markdown-Badges/badges/React/react2.svg)
 ![TypeScript](https://ziadoua.github.io/m3-Markdown-Badges/badges/TypeScript/typescript1.svg)
 ![Redux](https://ziadoua.github.io/m3-Markdown-Badges/badges/Redux/redux1.svg)
@@ -17,4 +17,4 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 # 📸 Screenshots
-![Home](<image 1.png>)
+![image 1](https://github.com/Bazelit/react-pizza/assets/114398169/22591a3d-f7af-41da-b0f6-4ef161e22cd2)
