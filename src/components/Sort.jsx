@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setActiveSort } from "../redux/slices/filterSlice";
 
-const Sort = () => {
+const Sort = ({ activeSort }) => {
+  const dispatch = useDispatch();
   const [isOpenPopup, setIsOpenPopup] = useState(false);
-  const [activeSort, setActiveSort] = useState(0);
 
-  const sortList = ["популярности", "цене", "алфавиту"];
+  const sortList = ["популярности", "↑ цене", "↓ цене", "алфавиту"];
 
   return (
     <div className="sort">
@@ -26,10 +28,7 @@ const Sort = () => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span
-          onClick={() => setIsOpenPopup(!isOpenPopup)}
-          style={{ userSelect: "none" }}
-        >
+        <span onClick={() => setIsOpenPopup(!isOpenPopup)}>
           {sortList[activeSort]}
         </span>
       </div>
@@ -40,7 +39,7 @@ const Sort = () => {
               <li
                 key={index}
                 onClick={() => {
-                  setActiveSort(index);
+                  dispatch(setActiveSort(index));
                   setIsOpenPopup(false);
                 }}
                 className={activeSort === index ? "active" : ""}

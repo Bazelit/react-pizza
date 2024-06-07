@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Search from "./Search";
 
 const Header = () => {
   return (
@@ -13,6 +14,7 @@ const Header = () => {
             </div>
           </div>
         </NavLink>
+        <Search />
         <NavLink to="cart">
           <div className="header__cart">
             <button href="/cart.html" className="button button--cart">

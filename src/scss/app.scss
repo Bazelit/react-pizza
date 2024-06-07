@@ -9,8 +9,16 @@
   // user-select: none;
 }
 
-body {
-  // background-color: $background;
+::selection {
+  background: #fe5f1e;
+  color: rgb(255, 255, 255);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #fe5f1e;
+  color: rgb(255, 255, 255);
+  text-shadow: none;
 }
 
 .wrapper {
@@ -40,7 +48,7 @@ body {
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    // grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 11px;
 
     @media (max-width: 1400px) {
@@ -168,7 +176,7 @@ body {
   }
 
   .content__items {
-    display: block
+    display: block;
   }
 
   &__item {

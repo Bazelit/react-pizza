@@ -16,6 +16,8 @@
     }
 
     span {
+      user-select: none;
+      white-space: nowrap;
       color: $orange;
       border-bottom: 1px dashed $orange;
       cursor: pointer;
