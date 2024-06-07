@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import Search from "./Search";
 
 const Header = () => {
+  const { totalPrice, totalCount } = useSelector((state) => state.cart);
+
   return (
     <div className="header">
       <div className="container">
@@ -19,7 +23,7 @@ const Header = () => {
           <div className="header__cart">
             <button href="/cart.html" className="button button--cart">
               <span className="button-cart__price">
-                <span>520 ₽</span>
+                <span>{totalPrice} ₽</span>
                 <div className="button__delimiter"></div>
               </span>
               <svg
@@ -51,7 +55,7 @@ const Header = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>3</span>
+              <span>{totalCount}</span>
             </button>
           </div>
         </NavLink>

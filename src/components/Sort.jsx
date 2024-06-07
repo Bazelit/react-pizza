@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setActiveSort } from "../redux/slices/filterSlice";
 
 const Sort = ({ activeSort }) => {
   const dispatch = useDispatch();
   const [isOpenPopup, setIsOpenPopup] = useState(false);
-
+  const sortRef = useRef();
   const sortList = ["популярности", "↑ цене", "↓ цене", "алфавиту"];
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.composedPath().includes(sortRef.current)) {
+        setIsOpenPopup(false);
+      }
+    };
+
+    document.body.addEventListener("click", handleClickOutside);
+
+    return () => document.body.removeEventListener("click", handleClickOutside);
+  }, []);
+
   return (
-    <div className="sort">
+    <div ref={sortRef} className="sort">
       <div className="sort__label">
         <svg
           width="10"
