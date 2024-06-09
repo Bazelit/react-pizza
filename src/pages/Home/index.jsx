@@ -46,11 +46,23 @@ const Home = () => {
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
-        {status === "loading"
-          ? [...Array(8)].map((_, index) => <Skeleton key={index} />)
-          : searchByName.map((obj) => <PizzaBlock key={obj.id} {...obj} />)}
+        {status === "error" ? (
+          <div className="content__error-info">
+            <h2>Произошла ошибка 😕</h2>
+            <p>
+              К сожалению, не удалось получить пиццы. Попробуйте повторить
+              попытку позже.
+            </p>
+          </div>
+        ) : status === "loading" ? (
+          [...Array(8)].map((_, index) => <Skeleton key={index} />)
+        ) : (
+          searchByName.map((obj) => <PizzaBlock key={obj.id} {...obj} />)
+        )}
       </div>
-      <Pagination onChangePage={(number) => setCurrentPage(number)} />
+      {status === "error" ? null : (
+        <Pagination onChangePage={(number) => setCurrentPage(number)} />
+      )}
     </div>
   );
 };
