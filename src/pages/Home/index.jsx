@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPizzas } from "../../redux/slices/pizzasSlice";
 
 import Sort from "../../components/Sort";
 import Categories from "../../components/Categories";
@@ -9,27 +9,14 @@ import Skeleton from "../../components/PizzaBlock/Skeleton";
 import Pagination from "../../components/Pagination";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const { pizzas, status } = useSelector((state) => state.pizzas);
   const searchValue = useSelector((state) => state.search.searchValue);
   const { activeCategory, activeSort } = useSelector((state) => state.filter);
-
-  const [pizzas, setPizzas] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://665d9f80e88051d604078e90.mockapi.io/pizzas?page=${currentPage}&limit=8`
-      )
-      .then((res) => {
-        setPizzas(res.data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setIsLoading(false);
-      });
-    window.scrollTo(0, 0);
+    dispatch(fetchPizzas(currentPage));
   }, [currentPage]);
 
   const filteredProducts =
@@ -59,7 +46,7 @@ const Home = () => {
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
-        {isLoading
+        {status === "loading"
           ? [...Array(8)].map((_, index) => <Skeleton key={index} />)
           : searchByName.map((obj) => <PizzaBlock key={obj.id} {...obj} />)}
       </div>
