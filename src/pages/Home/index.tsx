@@ -16,13 +16,13 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    dispatch(fetchPizzas(currentPage));
+    dispatch(fetchPizzas({currentPage}));
   }, [currentPage]);
 
   const filteredProducts =
     activeCategory === 0
       ? pizzas
-      : pizzas.filter((item) => item.category == activeCategory);
+      : pizzas.filter((item) => item.category === activeCategory);
 
   const searchByName = filteredProducts.filter((product) =>
     product.title.toLowerCase().includes(searchValue.toLowerCase())
