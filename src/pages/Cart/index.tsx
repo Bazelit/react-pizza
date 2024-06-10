@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { clearProduct } from "../../redux/slices/cartSlice";
+import { clearProduct } from "../../redux/slices/cartSlice.js";
 
-import Modal from "../../components/Modal";
-import EmptyCart from "./EmptyCart";
-import CartItem from "../../components/CartItem";
+import Modal from "../../components/Modal/index.js";
+import EmptyCart from "./EmptyCart/index.js";
+import CartItem from "../../components/CartItem.js";
 
 const Cart = () => {
   const navigate = useNavigate();

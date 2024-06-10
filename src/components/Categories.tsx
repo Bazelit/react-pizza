@@ -1,4 +1,4 @@
-import { setActiveCategory } from "../redux/slices/filterSlice";
+import { setActiveCategory } from "../redux/slices/filterSlice.js";
 import { useDispatch } from "react-redux";
 
 const Categories = ({ activeCategory }) => {

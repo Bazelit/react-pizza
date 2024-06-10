@@ -1,6 +1,12 @@
 import styles from "./Modal.module.scss";
 
-const Modal = ({ isOpen, onClose, onConfirm }) => {
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onConfirm: () => void;
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
 
   return (

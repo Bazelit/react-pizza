@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setSearchValue } from "../../redux/slices/searchSlice";
+import { setSearchValue } from "../../redux/slices/searchSlice.js";
 import styles from "./Search.module.scss";
 
 const Search = () => {
