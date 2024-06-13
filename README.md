@@ -20,4 +20,4 @@ Currently, two official plugins are available:
 
 # 📸 Screenshots
 
-![image 1](https://github.com/Bazelit/react-pizza/assets/114398169/22591a3d-f7af-41da-b0f6-4ef161e22cd2)
+![image 1](https://github.com/Bazelit/react-pizza/assets/114398169/f447bf6d-0c48-458e-8bd6-75ad8abb9745)
