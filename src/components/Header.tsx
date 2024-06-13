@@ -21,7 +21,7 @@ const Header = () => {
         <Search />
         <NavLink to="cart">
           <div className="header__cart">
-            <button href="/cart.html" className="button button--cart">
+            <button className="button button--cart">
               <span className="button-cart__price">
                 <span>{totalPrice} ₽</span>
                 <div className="button__delimiter"></div>

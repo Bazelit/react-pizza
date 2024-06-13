@@ -1,12 +1,18 @@
 import axios from "axios";
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { PizzaType } from "../../types/PizzaType";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const initialState = {pizzas: [], status: null};
+type PizzasState = {
+  pizzas: PizzaType[];
+  status: "loading" | "success" | "error" | null;
+};
+
+const initialState: PizzasState = { pizzas: [], status: null };
 
 export const fetchPizzas = createAsyncThunk(
   "pizzas/fetchPizzas",
-  async function ({currentPage}) {
-    const {data} = await axios.get(
+  async function ({ currentPage }: { currentPage: number }) {
+    const { data } = await axios.get(
       `https://665d9f80e88051d604078e90.mockapi.io/pizzas?page=${currentPage}&limit=8`
     );
     return data;
@@ -38,6 +44,6 @@ const pizzasSlice = createSlice({
   },
 });
 
-export const {setPizzas} = pizzasSlice.actions;
+export const { setPizzas } = pizzasSlice.actions;
 
 export default pizzasSlice.reducer;

@@ -1,16 +1,20 @@
-import { useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setSearchValue } from "../../redux/slices/searchSlice.js";
+import React from "react";
 import styles from "./Search.module.scss";
 
-const Search = () => {
-  const searchValue = useSelector((state) => state.search.searchValue);
+import { RootState } from "../../redux/store.js";
+import { setSearchValue } from "../../redux/slices/searchSlice.js";
+import { useSelector, useDispatch } from "react-redux";
+
+const Search: React.FC = () => {
+  const searchValue = useSelector(
+    (state: RootState) => state.search.searchValue
+  );
   const dispatch = useDispatch();
-  const inputRef = useRef();
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const clearSearch = () => {
     dispatch(setSearchValue(""));
-    inputRef.current.focus();
+    inputRef.current?.focus();
   };
 
   return (
