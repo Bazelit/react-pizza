@@ -7,6 +7,11 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
+    white-space: nowrap;
+
+    @media (max-width: 590px) {
+      font-size: 40px;
+    }
 
     img {
       margin-right: 5px;

@@ -1,23 +1,14 @@
 import React from "react";
 
 import { useDispatch } from "react-redux";
+import { CartItemType } from "../scss/types/CartItemType.js";
 import {
   addCartProducts,
   removeProduct,
   removeCartProduct,
 } from "../redux/slices/cartSlice.js";
 
-type CartItemProps = {
-  id: number;
-  title: string;
-  price: number;
-  imageUrl: string;
-  size: number;
-  type: number;
-  count: number;
-};
-
-const CartItem: React.FC<CartItemProps> = ({
+const CartItem: React.FC<CartItemType> = ({
   id,
   title,
   price,
@@ -30,14 +21,16 @@ const CartItem: React.FC<CartItemProps> = ({
 
   return (
     <div className="cart__item">
-      <div className="cart__item-img">
-        <img className="pizza-block__image" src={imageUrl} alt={title} />
-      </div>
-      <div className="cart__item-info">
-        <h3>{title}</h3>
-        <p>
-          {type}, {size} см.
-        </p>
+      <div className="cart__item-block">
+        <div className="cart__item-img">
+          <img className="pizza-block__image" src={imageUrl} alt={title} />
+        </div>
+        <div className="cart__item-info">
+          <h3>{title}</h3>
+          <p>
+            {type}, {size} см.
+          </p>
+        </div>
       </div>
       <div className="cart__item-count">
         <div

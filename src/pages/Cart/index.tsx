@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store.js";
 import { useNavigate } from "react-router-dom";
+import { CartItemType } from "../../scss/types/CartItemType.js";
 import { clearProduct } from "../../redux/slices/cartSlice.js";
+import { useDispatch, useSelector } from "react-redux";
 
 import Modal from "../../components/Modal/index.js";
 import EmptyCart from "./EmptyCart/index.js";
@@ -11,7 +13,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { cartProducts, totalPrice, totalCount } = useSelector(
-    (state) => state.cart
+    (state: RootState) => state.cart
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -112,7 +114,7 @@ const Cart = () => {
           />
         </div>
         <div className="content__items">
-          {cartProducts.map((product) => (
+          {cartProducts.map((product: CartItemType) => (
             <CartItem key={product.id} {...product} />
           ))}
         </div>

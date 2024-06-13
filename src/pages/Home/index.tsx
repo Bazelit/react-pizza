@@ -1,5 +1,5 @@
 import { RootState } from "../../redux/store";
-import { PizzaType } from "../../types/PizzaType";
+import { PizzaType } from "../../scss/types/PizzaType";
 import { AppDispatch } from "../../redux/store";
 import { fetchPizzas } from "../../redux/slices/pizzasSlice";
 import { useState, useEffect } from "react";
