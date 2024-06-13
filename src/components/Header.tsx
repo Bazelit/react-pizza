@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
+import { RootState } from "../redux/store";
 import { useSelector } from "react-redux";
 
 import Search from "./Search";
 
 const Header = () => {
-  const { totalPrice, totalCount } = useSelector((state) => state.cart);
+  const { totalPrice, totalCount } = useSelector(
+    (state: RootState) => state.cart
+  );
 
   return (
     <div className="header">

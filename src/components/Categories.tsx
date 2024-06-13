@@ -1,7 +1,7 @@
 import { setActiveCategory } from "../redux/slices/filterSlice.js";
 import { useDispatch } from "react-redux";
 
-const Categories = ({ activeCategory }) => {
+const Categories = ({ activeCategory }: { activeCategory: number }) => {
   const dispatch = useDispatch();
 
   const categories = [

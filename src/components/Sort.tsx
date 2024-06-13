@@ -2,15 +2,15 @@ import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setActiveSort } from "../redux/slices/filterSlice.js";
 
-const Sort = ({ activeSort }) => {
+const Sort = ({ activeSort }: { activeSort: number }) => {
   const dispatch = useDispatch();
   const [isOpenPopup, setIsOpenPopup] = useState(false);
-  const sortRef = useRef();
+  const sortRef = useRef<HTMLDivElement>(null);
   const sortList = ["популярности", "↑ цене", "↓ цене", "алфавиту"];
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.composedPath().includes(sortRef.current)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (sortRef.current && !sortRef.current.contains(event.target as Node)) {
         setIsOpenPopup(false);
       }
     };
