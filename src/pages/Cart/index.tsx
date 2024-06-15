@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RootState } from "../../redux/store.js";
 import { useNavigate } from "react-router-dom";
-import { CartItemType } from "../../scss/types/CartItemType.js";
+import { CartItemType } from "../../types/CartItemType.js";
 import { clearProduct } from "../../redux/slices/cartSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 

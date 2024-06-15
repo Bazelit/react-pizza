@@ -1,5 +1,5 @@
 import axios from "axios";
-import { PizzaType } from "../../scss/types/PizzaType";
+import { PizzaType } from "../../types/PizzaType";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 type PizzasState = {

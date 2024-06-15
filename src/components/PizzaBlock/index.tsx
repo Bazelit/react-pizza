@@ -1,7 +1,7 @@
 import React from "react";
 
 import { RootState } from "../../redux/store.js";
-import { PizzaType } from "../../scss/types/PizzaType.js";
+import { PizzaType } from "../../types/PizzaType.js";
 import { addCartProducts } from "../../redux/slices/cartSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 

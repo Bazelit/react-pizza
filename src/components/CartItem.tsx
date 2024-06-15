@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useDispatch } from "react-redux";
-import { CartItemType } from "../scss/types/CartItemType.js";
+import { CartItemType } from "../types/CartItemType.js";
 import {
   addCartProducts,
   removeProduct,
