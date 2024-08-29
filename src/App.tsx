@@ -6,7 +6,7 @@ import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
-import Payment from "./pages/Payment/Payment";
+import Payment from "./pages/Payment";
 
 const App = () => {
   const location = useLocation();

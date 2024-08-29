@@ -1,5 +1,9 @@
 @import '../variables';
 
+*::-webkit-scrollbar {
+  display: none; /* Скрывает полосу прокрутки в WebKit браузерах (Chrome, Safari) */
+}
+
 .categories {
   ul {
     display: flex;

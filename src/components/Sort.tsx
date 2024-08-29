@@ -44,24 +44,22 @@ const Sort = ({ activeSort }: { activeSort: number }) => {
           {sortList[activeSort]}
         </span>
       </div>
-      {isOpenPopup && (
-        <div className="sort__popup">
-          <ul>
-            {sortList.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => {
-                  dispatch(setActiveSort(index));
-                  setIsOpenPopup(false);
-                }}
-                className={activeSort === index ? "active" : ""}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div className={`sort__popup ${isOpenPopup ? "open" : ""}`}>
+        <ul>
+          {sortList.map((item, index) => (
+            <li
+              key={index}
+              onClick={() => {
+                dispatch(setActiveSort(index));
+                setIsOpenPopup(false);
+              }}
+              className={activeSort === index ? "active" : ""}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

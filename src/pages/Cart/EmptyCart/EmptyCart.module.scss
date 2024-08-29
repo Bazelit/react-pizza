@@ -1,35 +1,41 @@
 .root {
   text-align: center;
-  padding: 100px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
 
   h1 {
-    display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
     white-space: nowrap;
+    
 
     @media (max-width: 590px) {
-      font-size: 40px;
+      font-size: 33px;
     }
 
     img {
       margin-right: 5px;
-      width: 48px;
+      width: 40px;
     }
   }
 
+  
+
   .cartImg {
+    width: 100%;
     margin-bottom: 15px;
   }
 
   .cartBtn {
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     border: none;
     color: white;
-    width: 210px;
-    height: 46px;
+    padding: 0 50px;
+    height: 60px;
     border-radius: 30px;
     background: rgb(40, 40, 40);
     transition: all 0.2s ease;

@@ -54,3 +54,32 @@
     }
   }
 }
+
+.sort__popup {
+  top: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.sort__popup.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.sort__popup ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sort__popup li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sort__popup li.active {
+  font-weight: bold;
+}

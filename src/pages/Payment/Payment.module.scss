@@ -1,6 +1,8 @@
 .root {
   text-align: center;
-  padding: 100px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 40px;
 
   .paymentText {
     display: flex;
@@ -20,7 +22,7 @@
   }
 
   .cartImg {
-    width: 400px;
+    width: 100%;
     margin-bottom: 15px;
   }
 
@@ -29,7 +31,7 @@
     font-size: 20px;
     border: none;
     color: white;
-    width: 300px;
+    padding: 0 60px;
     height: 60px;
     border-radius: 30px;
     background: rgb(40, 40, 40);
