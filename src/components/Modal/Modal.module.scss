@@ -10,6 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards ease-in-out;
 }
 
 .modal {
@@ -19,44 +21,66 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   max-width: 500px;
   width: 100%;
+  transform: scale(0.7);
+  opacity: 0;
+  animation: modalIn 0.3s forwards ease-in-out;
+}
 
-  h2 {
-    margin-bottom: 10px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal p {
+  margin-bottom: 25px;
+}
+
+.modalButtons {
+  border: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalButtons button {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: #fe5f1e;
+  border-radius: 30px;
+  padding: 10px 20px;
+  min-width: 100px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
+
+  &:active {
+    transform: scale(0.95);
   }
 
-  p {
-    margin-bottom: 25px;
-  }
-
-  &Buttons {
-    border: 0;
-    display: flex;
-    justify-content: flex-end;
-
-    button {
-      display: inline-block;
-      margin-left: 10px;
-      background-color: #fe5f1e;
-      border-radius: 30px;
-      padding: 10px 20px;
-      min-width: 100px;
-      color: white;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s ease, border-color 0.2s ease;
-      border: 1px solid transparent;
-      transition: all 0.2s ease;
-
-      &:active {
-        transform: scale(0.95);
-      }
-
-      &:first-child {
-        background: none;
-        border: 1px solid #fe5f1e;
-        color: #fe5f1e;
-        margin-left: 0;
-      }
-    }
+  &:first-child {
+    background: none;
+    border: 1px solid #fe5f1e;
+    color: #fe5f1e;
+    margin-left: 0;
   }
 }

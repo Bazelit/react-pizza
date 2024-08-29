@@ -30,6 +30,11 @@ const Cart = () => {
     setIsModalOpen(false);
   };
 
+  const handlePayBtn = () => {
+    dispatch(clearProduct());
+    navigate("/payment");
+  };
+
   return cartProducts.length === 0 ? (
     <EmptyCart />
   ) : (
@@ -149,7 +154,7 @@ const Cart = () => {
               </svg>
               <span>Вернуться назад</span>
             </button>
-            <div className="button pay-btn">
+            <div className="button pay-btn" onClick={handlePayBtn}>
               <span>Оплатить сейчас</span>
             </div>
           </div>

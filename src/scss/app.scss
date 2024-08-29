@@ -9,6 +9,26 @@
   // user-select: none;
 }
 
+// Переход
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
 ::selection {
   background: #fe5f1e;
   color: rgb(255, 255, 255);
@@ -177,6 +197,7 @@
   &__clear {
     display: flex;
     align-items: center;
+    padding-right: 10px;
     cursor: pointer;
     @include noselect();
 
@@ -185,6 +206,10 @@
       margin-left: 7px;
       color: #b6b6b6;
       font-size: 18px;
+
+      @media (max-width: 420px) {
+        display: none;
+      }
     }
 
     span,
@@ -213,11 +238,11 @@
     display: flex;
     width: 100%;
     border-top: 1px solid $gray-line;
-    margin-top: 30px;
+    margin-top: 20px;
     align-items: center;
     gap: 15px;
     justify-content: space-between;
-    padding: 30px 0;
+    padding: 20px 0;
 
     @media (max-width: 767px) {
       flex-wrap: wrap;
@@ -338,6 +363,10 @@
       display: flex;
       justify-content: space-between;
 
+      @media (max-width: 440px) {
+        flex-direction: column;
+      }
+
       span {
         font-size: 22px;
 
@@ -354,13 +383,22 @@
       justify-content: space-between;
       margin-top: 40px;
 
+      @media (max-width: 480px) {
+        flex-direction: column-reverse;
+      }
+
       .go-back-btn {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 210px;
-
+        height: 55px;
         border-color: darken($color: $gray-line, $amount: 10);
+
+        @media (max-width: 480px) {
+          width: 100%;
+          margin-top: 10px;
+        }
 
         span {
           color: darken($color: $gray-line, $amount: 20);
@@ -391,6 +429,10 @@
         font-weight: 600;
         width: 210px;
         padding: 16px;
+
+        @media (max-width: 480px) {
+          width: 100%;
+        }
       }
     }
   }
