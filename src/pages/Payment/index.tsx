@@ -9,7 +9,7 @@ const Payment = () => {
       <div className={styles.emptyCartText}>
         <h1 className={styles.paymentText}>
           <img src="img/check-mark.svg" alt="check-mark" />
-          <span>Заказа оплачен</span>
+          <span>Заказ оплачен</span>
         </h1>
       </div>
       <div>
